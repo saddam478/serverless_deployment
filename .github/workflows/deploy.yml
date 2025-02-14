@@ -28,10 +28,9 @@ jobs:
         run: |
           aws s3 sync app/ s3://web-app-bucket123 --delete
 
-      - name: Install Dependencies
+      - name: Packaging the files
         run: |
-          pip install --target package -r lambda/requirements.txt
-          cp app/*.html package/ && cp lambda/app.py package/
+          cp app/*.html lambda/app.py package/
           cd package && zip -r ../deployment.zip .
 
       - name: Deploy to AWS Lambda
@@ -41,6 +40,6 @@ jobs:
           AWS_REGION: ap-south-1
         run: |
           aws lambda update-function-code \
-            --function-name demo-lambda \
+            --function-name lambda-deployment \
             --zip-file fileb://deployment.zip \
             --region ap-south-1
