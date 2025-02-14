@@ -1,4 +1,4 @@
-name: Deploy to AWS S3 and Lambda
+name: Deploy to AWS S3 and Lambda funtion
 
 on:
   push:
