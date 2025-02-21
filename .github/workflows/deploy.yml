@@ -1,10 +1,7 @@
 name: Deploy to AWS S3 and Lambda funtion
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+ workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
