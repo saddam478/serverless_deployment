@@ -26,7 +26,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-south-1
         run: |
-          aws s3 sync app/ s3://web-app-bucket123 --delete
+          aws s3 sync app/ s3://web-app-bucket-123 --delete
 
       - name: Packaging the files
         run: |
